@@ -1,0 +1,5 @@
+trigger MoveCustomerToSFCC on Account (before insert) {
+    for(Account acc:trigger.new) {
+     	createAccountInSFCC.create(acc.Name, acc.Name + '@gmail.com', acc.Name);
+    }
+}

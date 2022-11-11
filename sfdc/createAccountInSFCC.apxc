@@ -1,0 +1,20 @@
+public class createAccountInSFCC {
+     @future (callout=true)
+     Public static void create(String login, String email, String lastName) {
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint('https://zyfk-003.sandbox.us03.dx.commercecloud.salesforce.com/s/RefArch//dw/shop/v22_8/customers');
+        request.setMethod('POST');
+        request.setHeader('Content-Type', 'application/json;charset=UTF-8');
+        request.setHeader('Authorization', 'Bearer INSERT_YOUR_TOKEN');
+        String body = '{"customer": {"login":"' + login + '","email":"' + email + '","last_name":"' + lastName + '"}}';
+        request.setBody(body);
+        HttpResponse response = http.send(request);
+
+        if (response.getStatusCode() == 200) {
+            System.debug(response.getBody());
+        } else {
+          	System.debug('Callout failed: ' + response.getBody());
+        }
+     }
+}

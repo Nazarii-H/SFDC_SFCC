@@ -1,0 +1,22 @@
+{
+	"_v": "22.1",
+	"clients": [
+		{
+			"client_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+			"resources": [
+				{
+					"methods": [
+						"get",
+						"post",
+						"put",
+						"patch",
+						"delete"
+					],
+					"read_attributes": "(**)",
+					"write_attributes": "",
+					"resource_id": "/**"
+				}
+			]
+		}
+	]
+}
